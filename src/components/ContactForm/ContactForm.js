@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-// import { v4 as uuidv4 } from "uuid"
 import PropTypes from "prop-types"
 import styled from "./ContactForm.module.css"
 import { connect } from "react-redux"
@@ -17,31 +16,11 @@ const ContactForm = ({ onSubmit }) => {
     setNumber(e.currentTarget.value)
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   const isSuccess = onSubmit({
-  //     name,
-  //     number,
-  //     id: uuidv4(),
-  //   })
-
-  //   if (isSuccess) {
-  //     setName("")
-  //     setNumber("")
-  //   }
-  // }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     onSubmit(name, number)
     setName("")
     setNumber("")
-
-    //  if (contacts.find((item) => item.name === contact.name)) {
-    //   alert(`${contact.name} is already in contacts`)
-    //   return false
-    // }
   }
 
   return (
